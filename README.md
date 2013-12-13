@@ -5,11 +5,9 @@ Application du PPE3_GSB
 
 Travail en cours :
 
-KG : 	Commentaires à ajouter
-		Formulaire Visiteurs
+KG : 	Commentaires à ajouter - Formulaire Visiteurs
 		
-Varro : Base à exporter et terminer d'implémenter
-		Formulaire Médicaments
+Varro : Base à exporter et terminer d'implémenter - Formulaire Médicaments
 		
 Claire:	Formulaire Praticiens
 
