@@ -100,9 +100,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(329, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(300, 50);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(105, 69);
+            this.pictureBox2.Size = new System.Drawing.Size(125, 86);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;

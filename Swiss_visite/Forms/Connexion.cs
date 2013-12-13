@@ -19,22 +19,17 @@ namespace Swiss_visite
     public partial class Connexion : Form
     {
         private ConnectDBGSB ConnectBD;
-        string chaineConnexion = ConfigurationManager.ConnectionStrings["ConnectDBGSB"].ConnectionString;
 
         public Connexion()
         {
             InitializeComponent();
-            ConnectBD = new ConnectDBGSB(chaineConnexion);
+            // Instanciation de la chaine de connexion
+            ConnectBD = new ConnectDBGSB();
+            // Bind de la datasource
             bsVisiteurs.DataSource = ConnectBD.COLLABORATEURs;
         }
 
-        //Au chargement de l'appli
-        private void Connexion_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        //Appui sur le bouton "Quitter"
+        // Appui sur le bouton "Quitter"
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             bool quit = AskConfirmQuitAppli();
@@ -44,10 +39,10 @@ namespace Swiss_visite
             }
         }
 
-        //Appui sur le bouton "Connexion"
+        // Appui sur le bouton "Connexion"
         private void btnConnex_Click(object sender, EventArgs e)
         {
-            //Contrôle de saisie de l'utilisateur et du mot de passe
+            // Contrôle de saisie de l'utilisateur et du mot de passe
             if (tbUser.Text == "" && tbPwd.Text == "")
             {
                 MessageBox.Show("Veuillez saisir un nom d'utilisateur et un mot de passe");
@@ -62,11 +57,11 @@ namespace Swiss_visite
             }
             else
             {
-                    // Nouvelle connection à la base
+                    // Stockage des données saisies
                     string user = tbUser.Text;
                     string pwd = tbPwd.Text;
 
-                    //Requète LINQ vérif userName et mdp dans les tables collaborateurs et praticiens
+                    // Requète LINQ récup collaborateurs
                     var userQueryCol = from IDC in ConnectBD.COLLABORATEURs
                                        select IDC;
                     // Booléen de vérif de co
@@ -74,8 +69,6 @@ namespace Swiss_visite
                     foreach (COLLABORATEUR c in userQueryCol)
                     {
                         #region Reformatage de données char => string
-
-                        // On stocke les données à conditionner dans des variables
                         // On reformate les données char avec des vides inutiles en string
                         // Reformatage de données user
                         string userTS = c.COL_MATRICULE.ToString();
@@ -96,6 +89,7 @@ namespace Swiss_visite
                             j++;
                         }
 
+                        // Reformatage nom/prénom pour envoi et affichage au form accueil
                         // Reformatage de données nom
                         string nomTS = c.COL_NOM.ToString();
                         string nomTS2 = "";
@@ -118,6 +112,7 @@ namespace Swiss_visite
 
                         #endregion
 
+                        // Controle de saisie réussi
                         if (userTS2 == user && pwdTS2 == pwd)
                         {
                             trouve = true;
@@ -129,16 +124,14 @@ namespace Swiss_visite
                             Forms.Accueil accueil = new Forms.Accueil(userName, ConnectBD, accessLvl);
                             // Ouverture d'un form accueil
                             accueil.Show();
-                            // On cache ce form
+                            // On cache le form actuel
                             this.Hide();
-                            break;
                         }                       
                     }
-                    // Pas de correspondance d'utilisateur/pwd
+                    // Pas de correspondance user/pwd
                     if (trouve == false)
                     {
                         MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.");
-                        
                     }
             }
         }
@@ -150,19 +143,19 @@ namespace Swiss_visite
         }
 
         #region Confirmation quitter
-        // Méthode de demande à l'utilisateur confirmation pour quitter,
+        // Méthode de confirmation user pour quitter
         private bool AskConfirmQuitAppli()
         {
-            // message confirmation quitter l'application
+            // Message confirmation quit application
             if (MessageBox.Show("Quitter l'application ?",
                                "Message de confirmation",
                                MessageBoxButtons.YesNo) == DialogResult.No)
             {
-                // non
+                // Non
                 return false;
             };
 
-            // oui, quitter
+            // Oui, quitter
             return true;
         }
         #endregion

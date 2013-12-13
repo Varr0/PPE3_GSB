@@ -61,19 +61,19 @@ namespace Swiss_visite.Forms
         }
 
         #region Confirmation quitter
-        // Méthode de demande à l'utilisateur confirmation pour quitter,
+        // Méthode de confirmation user pour quitter
         private bool AskConfirmQuitAppli()
         {
-            // message confirmation quitter l'application
+            // Message confirmation quit application
             if (MessageBox.Show("Quitter l'application ?",
                                "Message de confirmation",
                                MessageBoxButtons.YesNo) == DialogResult.No)
             {
-                // non
+                // Non
                 return false;
             };
 
-            // oui, quitter
+            // Oui, quitter
             return true;
         }
         #endregion

@@ -7,9 +7,8 @@ Travail en cours :
 
 KG : 	Commentaires à ajouter - Formulaire Visiteurs
 		
-Varro : Base à exporter et terminer d'implémenter - Formulaire Médicaments
+Varr0 : Base à exporter et terminer d'implémenter - Formulaire Médicaments
 		
-Claire:	Formulaire Praticiens
+Floue:	Formulaire Praticiens
 
 Thomas:	Formulaire Rapports de visite
-

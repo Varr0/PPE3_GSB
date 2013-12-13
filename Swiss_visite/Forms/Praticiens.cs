@@ -16,5 +16,11 @@ namespace Swiss_visite.Forms
             InitializeComponent();
         }
 
+        // A la sortie du formulaire
+        private void Praticiens_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
