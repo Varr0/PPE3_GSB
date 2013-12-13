@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GSB_Equipe4.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="GSB_Equipe4StoreContainer">
+          <EntitySet Name="COLLABORATEUR" EntityType="GSB_Equipe4.Store.COLLABORATEUR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MEDICAMENT" EntityType="GSB_Equipe4.Store.MEDICAMENT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MOTIF" EntityType="GSB_Equipe4.Store.MOTIF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OFFRIR" EntityType="GSB_Equipe4.Store.OFFRIR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PRATICIEN" EntityType="GSB_Equipe4.Store.PRATICIEN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RAPPORT_VISITE" EntityType="GSB_Equipe4.Store.RAPPORT_VISITE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SWITCHBOARD_ITEMS" EntityType="GSB_Equipe4.Store.SWITCHBOARD_ITEMS" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_OFFRIR_MEDICAMENT" Association="GSB_Equipe4.Store.FK_OFFRIR_MEDICAMENT">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
+            <End Role="OFFRIR" EntitySet="OFFRIR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OFFRIR_RAPPORT_VISITE" Association="GSB_Equipe4.Store.FK_OFFRIR_RAPPORT_VISITE">
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+            <End Role="OFFRIR" EntitySet="OFFRIR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAPPORT_VISITE_COLLABORATEUR" Association="GSB_Equipe4.Store.FK_RAPPORT_VISITE_COLLABORATEUR">
+            <End Role="COLLABORATEUR" EntitySet="COLLABORATEUR" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAPPORT_VISITE_MOTIF" Association="GSB_Equipe4.Store.FK_RAPPORT_VISITE_MOTIF">
+            <End Role="MOTIF" EntitySet="MOTIF" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAPPORT_VISITE_PRATICIEN" Association="GSB_Equipe4.Store.FK_RAPPORT_VISITE_PRATICIEN">
+            <End Role="PRATICIEN" EntitySet="PRATICIEN" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="COLLABORATEUR">
+          <Key>
+            <PropertyRef Name="COL_MATRICULE" />
+          </Key>
+          <Property Name="COL_MATRICULE" Type="char" Nullable="false" MaxLength="32" />
+          <Property Name="COL_NOM" Type="char" MaxLength="32" />
+          <Property Name="COL_PRENOM" Type="char" MaxLength="32" />
+          <Property Name="COL_ADRESSE" Type="char" MaxLength="32" />
+          <Property Name="COL_CP" Type="char" MaxLength="32" />
+          <Property Name="COL_VILLE" Type="char" MaxLength="32" />
+          <Property Name="COL_DATEEMBAUCHE" Type="char" MaxLength="32" />
+          <Property Name="COL_NIVEAU_ACCES" Type="char" MaxLength="32" />
+          <Property Name="COL_MDP" Type="char" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="MEDICAMENT">
+          <Key>
+            <PropertyRef Name="MED_DEPOTLEGAL" />
+          </Key>
+          <Property Name="MED_DEPOTLEGAL" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="MED_NOMCOMMERCIAL" Type="varchar" MaxLength="25" />
+          <Property Name="MED_COMPOSITION" Type="varchar" MaxLength="255" />
+          <Property Name="MED_EFFETS" Type="varchar" MaxLength="255" />
+          <Property Name="MED_CONTREINDIC" Type="varchar" MaxLength="255" />
+          <Property Name="MED_PRIXECHANTILLON" Type="int" />
+          <Property Name="MED_DATESORTIE" Type="char" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="MOTIF">
+          <Key>
+            <PropertyRef Name="MOT_NUM" />
+          </Key>
+          <Property Name="MOT_NUM" Type="char" Nullable="false" MaxLength="32" />
+          <Property Name="MOT_LIBELLE" Type="char" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="OFFRIR">
+          <Key>
+            <PropertyRef Name="MED_DEPOTLEGAL" />
+            <PropertyRef Name="COL_MATRICULE" />
+            <PropertyRef Name="RAP_NUM" />
+          </Key>
+          <Property Name="MED_DEPOTLEGAL" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="COL_MATRICULE" Type="char" Nullable="false" MaxLength="32" />
+          <Property Name="RAP_NUM" Type="bigint" Nullable="false" />
+          <Property Name="QTE_OFFERTE" Type="char" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="PRATICIEN">
+          <Key>
+            <PropertyRef Name="PRA_NUM" />
+          </Key>
+          <Property Name="PRA_NUM" Type="int" Nullable="false" />
+          <Property Name="PRA_NOM" Type="varchar" MaxLength="25" />
+          <Property Name="PRA_PRENOM" Type="varchar" MaxLength="30" />
+          <Property Name="PRA_ADRESSE" Type="varchar" MaxLength="50" />
+          <Property Name="PRA_CP" Type="varchar" MaxLength="5" />
+          <Property Name="PRA_VILLE" Type="varchar" MaxLength="25" />
+          <Property Name="PRA_COEFNOTORIETE" Type="real" />
+        </EntityType>
+        <EntityType Name="RAPPORT_VISITE">
+          <Key>
+            <PropertyRef Name="COL_MATRICULE" />
+            <PropertyRef Name="RAP_NUM" />
+          </Key>
+          <Property Name="COL_MATRICULE" Type="char" Nullable="false" MaxLength="32" />
+          <Property Name="RAP_NUM" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MOT_NUM" Type="char" Nullable="false" MaxLength="32" />
+          <Property Name="PRA_NUM" Type="int" Nullable="false" />
+          <Property Name="RAP_DATE" Type="datetime" />
+          <Property Name="RAP_BILAN" Type="varchar" MaxLength="255" />
+          <Property Name="RAP_DATE_SAISIE" Type="char" MaxLength="32" />
+          <Property Name="RAP_COEFFCONFIANCE" Type="char" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="SWITCHBOARD_ITEMS">
+          <Key>
+            <PropertyRef Name="SWITCHBOARDID" />
+            <PropertyRef Name="ITEMNUMBER" />
+          </Key>
+          <Property Name="SWITCHBOARDID" Type="bigint" Nullable="false" />
+          <Property Name="ITEMNUMBER" Type="int" Nullable="false" />
+          <Property Name="ITEMTEXT" Type="varchar" MaxLength="255" />
+          <Property Name="COMMAND" Type="int" />
+          <Property Name="ARGUMENT" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_OFFRIR_MEDICAMENT">
+          <End Role="MEDICAMENT" Type="GSB_Equipe4.Store.MEDICAMENT" Multiplicity="1" />
+          <End Role="OFFRIR" Type="GSB_Equipe4.Store.OFFRIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENT">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Principal>
+            <Dependent Role="OFFRIR">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OFFRIR_RAPPORT_VISITE">
+          <End Role="RAPPORT_VISITE" Type="GSB_Equipe4.Store.RAPPORT_VISITE" Multiplicity="1" />
+          <End Role="OFFRIR" Type="GSB_Equipe4.Store.OFFRIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAPPORT_VISITE">
+              <PropertyRef Name="COL_MATRICULE" />
+              <PropertyRef Name="RAP_NUM" />
+            </Principal>
+            <Dependent Role="OFFRIR">
+              <PropertyRef Name="COL_MATRICULE" />
+              <PropertyRef Name="RAP_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAPPORT_VISITE_COLLABORATEUR">
+          <End Role="COLLABORATEUR" Type="GSB_Equipe4.Store.COLLABORATEUR" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="GSB_Equipe4.Store.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COLLABORATEUR">
+              <PropertyRef Name="COL_MATRICULE" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="COL_MATRICULE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAPPORT_VISITE_MOTIF">
+          <End Role="MOTIF" Type="GSB_Equipe4.Store.MOTIF" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="GSB_Equipe4.Store.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOTIF">
+              <PropertyRef Name="MOT_NUM" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="MOT_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAPPORT_VISITE_PRATICIEN">
+          <End Role="PRATICIEN" Type="GSB_Equipe4.Store.PRATICIEN" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="GSB_Equipe4.Store.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRATICIEN">
+              <PropertyRef Name="PRA_NUM" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="PRA_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GSB_Equipe4" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ConnectDBGSB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COLLABORATEURs" EntityType="GSB_Equipe4.COLLABORATEUR" />
+          <EntitySet Name="MEDICAMENTs" EntityType="GSB_Equipe4.MEDICAMENT" />
+          <EntitySet Name="MOTIFs" EntityType="GSB_Equipe4.MOTIF" />
+          <EntitySet Name="OFFRIRs" EntityType="GSB_Equipe4.OFFRIR" />
+          <EntitySet Name="PRATICIENs" EntityType="GSB_Equipe4.PRATICIEN" />
+          <EntitySet Name="RAPPORT_VISITE" EntityType="GSB_Equipe4.RAPPORT_VISITE" />
+          <EntitySet Name="SWITCHBOARD_ITEMS" EntityType="GSB_Equipe4.SWITCHBOARD_ITEMS" />
+          <AssociationSet Name="FK_RAPPORT_VISITE_COLLABORATEUR" Association="GSB_Equipe4.FK_RAPPORT_VISITE_COLLABORATEUR">
+            <End Role="COLLABORATEUR" EntitySet="COLLABORATEURs" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OFFRIR_MEDICAMENT" Association="GSB_Equipe4.FK_OFFRIR_MEDICAMENT">
+            <End Role="MEDICAMENT" EntitySet="MEDICAMENTs" />
+            <End Role="OFFRIR" EntitySet="OFFRIRs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAPPORT_VISITE_MOTIF" Association="GSB_Equipe4.FK_RAPPORT_VISITE_MOTIF">
+            <End Role="MOTIF" EntitySet="MOTIFs" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OFFRIR_RAPPORT_VISITE" Association="GSB_Equipe4.FK_OFFRIR_RAPPORT_VISITE">
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+            <End Role="OFFRIR" EntitySet="OFFRIRs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAPPORT_VISITE_PRATICIEN" Association="GSB_Equipe4.FK_RAPPORT_VISITE_PRATICIEN">
+            <End Role="PRATICIEN" EntitySet="PRATICIENs" />
+            <End Role="RAPPORT_VISITE" EntitySet="RAPPORT_VISITE" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="COLLABORATEUR">
+          <Key>
+            <PropertyRef Name="COL_MATRICULE" />
+          </Key>
+          <Property Name="COL_MATRICULE" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="COL_NOM" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="COL_PRENOM" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="COL_ADRESSE" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="COL_CP" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="COL_VILLE" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="COL_DATEEMBAUCHE" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="COL_NIVEAU_ACCES" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="COL_MDP" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="RAPPORT_VISITE" Relationship="GSB_Equipe4.FK_RAPPORT_VISITE_COLLABORATEUR" FromRole="COLLABORATEUR" ToRole="RAPPORT_VISITE" />
+        </EntityType>
+        <EntityType Name="MEDICAMENT">
+          <Key>
+            <PropertyRef Name="MED_DEPOTLEGAL" />
+          </Key>
+          <Property Name="MED_DEPOTLEGAL" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MED_NOMCOMMERCIAL" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="MED_COMPOSITION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MED_EFFETS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MED_CONTREINDIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MED_PRIXECHANTILLON" Type="Int32" />
+          <Property Name="MED_DATESORTIE" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="OFFRIRs" Relationship="GSB_Equipe4.FK_OFFRIR_MEDICAMENT" FromRole="MEDICAMENT" ToRole="OFFRIR" />
+        </EntityType>
+        <EntityType Name="MOTIF">
+          <Key>
+            <PropertyRef Name="MOT_NUM" />
+          </Key>
+          <Property Name="MOT_NUM" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="MOT_LIBELLE" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="RAPPORT_VISITE" Relationship="GSB_Equipe4.FK_RAPPORT_VISITE_MOTIF" FromRole="MOTIF" ToRole="RAPPORT_VISITE" />
+        </EntityType>
+        <EntityType Name="OFFRIR">
+          <Key>
+            <PropertyRef Name="MED_DEPOTLEGAL" />
+            <PropertyRef Name="COL_MATRICULE" />
+            <PropertyRef Name="RAP_NUM" />
+          </Key>
+          <Property Name="MED_DEPOTLEGAL" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="COL_MATRICULE" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="RAP_NUM" Type="Int64" Nullable="false" />
+          <Property Name="QTE_OFFERTE" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="MEDICAMENT" Relationship="GSB_Equipe4.FK_OFFRIR_MEDICAMENT" FromRole="OFFRIR" ToRole="MEDICAMENT" />
+          <NavigationProperty Name="RAPPORT_VISITE" Relationship="GSB_Equipe4.FK_OFFRIR_RAPPORT_VISITE" FromRole="OFFRIR" ToRole="RAPPORT_VISITE" />
+        </EntityType>
+        <EntityType Name="PRATICIEN">
+          <Key>
+            <PropertyRef Name="PRA_NUM" />
+          </Key>
+          <Property Name="PRA_NUM" Type="Int32" Nullable="false" />
+          <Property Name="PRA_NOM" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="PRA_PRENOM" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="PRA_ADRESSE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PRA_CP" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="PRA_VILLE" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="PRA_COEFNOTORIETE" Type="Single" />
+          <NavigationProperty Name="RAPPORT_VISITE" Relationship="GSB_Equipe4.FK_RAPPORT_VISITE_PRATICIEN" FromRole="PRATICIEN" ToRole="RAPPORT_VISITE" />
+        </EntityType>
+        <EntityType Name="RAPPORT_VISITE">
+          <Key>
+            <PropertyRef Name="COL_MATRICULE" />
+            <PropertyRef Name="RAP_NUM" />
+          </Key>
+          <Property Name="COL_MATRICULE" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="RAP_NUM" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MOT_NUM" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="PRA_NUM" Type="Int32" Nullable="false" />
+          <Property Name="RAP_DATE" Type="DateTime" />
+          <Property Name="RAP_BILAN" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RAP_DATE_SAISIE" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="RAP_COEFFCONFIANCE" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="COLLABORATEUR" Relationship="GSB_Equipe4.FK_RAPPORT_VISITE_COLLABORATEUR" FromRole="RAPPORT_VISITE" ToRole="COLLABORATEUR" />
+          <NavigationProperty Name="MOTIF" Relationship="GSB_Equipe4.FK_RAPPORT_VISITE_MOTIF" FromRole="RAPPORT_VISITE" ToRole="MOTIF" />
+          <NavigationProperty Name="OFFRIRs" Relationship="GSB_Equipe4.FK_OFFRIR_RAPPORT_VISITE" FromRole="RAPPORT_VISITE" ToRole="OFFRIR" />
+          <NavigationProperty Name="PRATICIEN" Relationship="GSB_Equipe4.FK_RAPPORT_VISITE_PRATICIEN" FromRole="RAPPORT_VISITE" ToRole="PRATICIEN" />
+        </EntityType>
+        <EntityType Name="SWITCHBOARD_ITEMS">
+          <Key>
+            <PropertyRef Name="SWITCHBOARDID" />
+            <PropertyRef Name="ITEMNUMBER" />
+          </Key>
+          <Property Name="SWITCHBOARDID" Type="Int64" Nullable="false" />
+          <Property Name="ITEMNUMBER" Type="Int32" Nullable="false" />
+          <Property Name="ITEMTEXT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COMMAND" Type="Int32" />
+          <Property Name="ARGUMENT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_RAPPORT_VISITE_COLLABORATEUR">
+          <End Role="COLLABORATEUR" Type="GSB_Equipe4.COLLABORATEUR" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="GSB_Equipe4.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COLLABORATEUR">
+              <PropertyRef Name="COL_MATRICULE" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="COL_MATRICULE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OFFRIR_MEDICAMENT">
+          <End Role="MEDICAMENT" Type="GSB_Equipe4.MEDICAMENT" Multiplicity="1" />
+          <End Role="OFFRIR" Type="GSB_Equipe4.OFFRIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEDICAMENT">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Principal>
+            <Dependent Role="OFFRIR">
+              <PropertyRef Name="MED_DEPOTLEGAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAPPORT_VISITE_MOTIF">
+          <End Role="MOTIF" Type="GSB_Equipe4.MOTIF" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="GSB_Equipe4.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOTIF">
+              <PropertyRef Name="MOT_NUM" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="MOT_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OFFRIR_RAPPORT_VISITE">
+          <End Role="RAPPORT_VISITE" Type="GSB_Equipe4.RAPPORT_VISITE" Multiplicity="1" />
+          <End Role="OFFRIR" Type="GSB_Equipe4.OFFRIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAPPORT_VISITE">
+              <PropertyRef Name="COL_MATRICULE" />
+              <PropertyRef Name="RAP_NUM" />
+            </Principal>
+            <Dependent Role="OFFRIR">
+              <PropertyRef Name="COL_MATRICULE" />
+              <PropertyRef Name="RAP_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAPPORT_VISITE_PRATICIEN">
+          <End Role="PRATICIEN" Type="GSB_Equipe4.PRATICIEN" Multiplicity="1" />
+          <End Role="RAPPORT_VISITE" Type="GSB_Equipe4.RAPPORT_VISITE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRATICIEN">
+              <PropertyRef Name="PRA_NUM" />
+            </Principal>
+            <Dependent Role="RAPPORT_VISITE">
+              <PropertyRef Name="PRA_NUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GSB_Equipe4StoreContainer" CdmEntityContainer="ConnectDBGSB">
+          <EntitySetMapping Name="COLLABORATEURs"><EntityTypeMapping TypeName="GSB_Equipe4.COLLABORATEUR"><MappingFragment StoreEntitySet="COLLABORATEUR">
+            <ScalarProperty Name="COL_MATRICULE" ColumnName="COL_MATRICULE" />
+            <ScalarProperty Name="COL_NOM" ColumnName="COL_NOM" />
+            <ScalarProperty Name="COL_PRENOM" ColumnName="COL_PRENOM" />
+            <ScalarProperty Name="COL_ADRESSE" ColumnName="COL_ADRESSE" />
+            <ScalarProperty Name="COL_CP" ColumnName="COL_CP" />
+            <ScalarProperty Name="COL_VILLE" ColumnName="COL_VILLE" />
+            <ScalarProperty Name="COL_DATEEMBAUCHE" ColumnName="COL_DATEEMBAUCHE" />
+            <ScalarProperty Name="COL_NIVEAU_ACCES" ColumnName="COL_NIVEAU_ACCES" />
+            <ScalarProperty Name="COL_MDP" ColumnName="COL_MDP" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MEDICAMENTs"><EntityTypeMapping TypeName="GSB_Equipe4.MEDICAMENT"><MappingFragment StoreEntitySet="MEDICAMENT">
+            <ScalarProperty Name="MED_DEPOTLEGAL" ColumnName="MED_DEPOTLEGAL" />
+            <ScalarProperty Name="MED_NOMCOMMERCIAL" ColumnName="MED_NOMCOMMERCIAL" />
+            <ScalarProperty Name="MED_COMPOSITION" ColumnName="MED_COMPOSITION" />
+            <ScalarProperty Name="MED_EFFETS" ColumnName="MED_EFFETS" />
+            <ScalarProperty Name="MED_CONTREINDIC" ColumnName="MED_CONTREINDIC" />
+            <ScalarProperty Name="MED_PRIXECHANTILLON" ColumnName="MED_PRIXECHANTILLON" />
+            <ScalarProperty Name="MED_DATESORTIE" ColumnName="MED_DATESORTIE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MOTIFs"><EntityTypeMapping TypeName="GSB_Equipe4.MOTIF"><MappingFragment StoreEntitySet="MOTIF">
+            <ScalarProperty Name="MOT_NUM" ColumnName="MOT_NUM" />
+            <ScalarProperty Name="MOT_LIBELLE" ColumnName="MOT_LIBELLE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OFFRIRs"><EntityTypeMapping TypeName="GSB_Equipe4.OFFRIR"><MappingFragment StoreEntitySet="OFFRIR">
+            <ScalarProperty Name="MED_DEPOTLEGAL" ColumnName="MED_DEPOTLEGAL" />
+            <ScalarProperty Name="COL_MATRICULE" ColumnName="COL_MATRICULE" />
+            <ScalarProperty Name="RAP_NUM" ColumnName="RAP_NUM" />
+            <ScalarProperty Name="QTE_OFFERTE" ColumnName="QTE_OFFERTE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PRATICIENs"><EntityTypeMapping TypeName="GSB_Equipe4.PRATICIEN"><MappingFragment StoreEntitySet="PRATICIEN">
+            <ScalarProperty Name="PRA_NUM" ColumnName="PRA_NUM" />
+            <ScalarProperty Name="PRA_NOM" ColumnName="PRA_NOM" />
+            <ScalarProperty Name="PRA_PRENOM" ColumnName="PRA_PRENOM" />
+            <ScalarProperty Name="PRA_ADRESSE" ColumnName="PRA_ADRESSE" />
+            <ScalarProperty Name="PRA_CP" ColumnName="PRA_CP" />
+            <ScalarProperty Name="PRA_VILLE" ColumnName="PRA_VILLE" />
+            <ScalarProperty Name="PRA_COEFNOTORIETE" ColumnName="PRA_COEFNOTORIETE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RAPPORT_VISITE"><EntityTypeMapping TypeName="GSB_Equipe4.RAPPORT_VISITE"><MappingFragment StoreEntitySet="RAPPORT_VISITE">
+            <ScalarProperty Name="COL_MATRICULE" ColumnName="COL_MATRICULE" />
+            <ScalarProperty Name="RAP_NUM" ColumnName="RAP_NUM" />
+            <ScalarProperty Name="MOT_NUM" ColumnName="MOT_NUM" />
+            <ScalarProperty Name="PRA_NUM" ColumnName="PRA_NUM" />
+            <ScalarProperty Name="RAP_DATE" ColumnName="RAP_DATE" />
+            <ScalarProperty Name="RAP_BILAN" ColumnName="RAP_BILAN" />
+            <ScalarProperty Name="RAP_DATE_SAISIE" ColumnName="RAP_DATE_SAISIE" />
+            <ScalarProperty Name="RAP_COEFFCONFIANCE" ColumnName="RAP_COEFFCONFIANCE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SWITCHBOARD_ITEMS"><EntityTypeMapping TypeName="GSB_Equipe4.SWITCHBOARD_ITEMS"><MappingFragment StoreEntitySet="SWITCHBOARD_ITEMS">
+            <ScalarProperty Name="SWITCHBOARDID" ColumnName="SWITCHBOARDID" />
+            <ScalarProperty Name="ITEMNUMBER" ColumnName="ITEMNUMBER" />
+            <ScalarProperty Name="ITEMTEXT" ColumnName="ITEMTEXT" />
+            <ScalarProperty Name="COMMAND" ColumnName="COMMAND" />
+            <ScalarProperty Name="ARGUMENT" ColumnName="ARGUMENT" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DB_GSB">
+        <EntityTypeShape EntityType="GSB_Equipe4.COLLABORATEUR" Width="1.5" PointX="0.75" PointY="1.125" Height="2.9417936197916661" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_Equipe4.MEDICAMENT" Width="1.5" PointX="3" PointY="5.375" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_Equipe4.MOTIF" Width="1.5" PointX="0.75" PointY="5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_Equipe4.OFFRIR" Width="1.5" PointX="5.25" PointY="1.625" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_Equipe4.PRATICIEN" Width="1.5" PointX="0.75" PointY="7.375" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_Equipe4.RAPPORT_VISITE" Width="1.5" PointX="3" PointY="1" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_Equipe4.SWITCHBOARD_ITEMS" Width="1.5" PointX="5.75" PointY="4.75" Height="1.9802864583333317" IsExpanded="true" />
+        <AssociationConnector Association="GSB_Equipe4.FK_RAPPORT_VISITE_COLLABORATEUR" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.5958968098958328" />
+          <ConnectorPoint PointX="3" PointY="2.5958968098958328" />
+        </AssociationConnector>
+        <AssociationConnector Association="GSB_Equipe4.FK_OFFRIR_MEDICAMENT" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.3624886067708326" />
+          <ConnectorPoint PointX="5.46875" PointY="7.3624886067708326" />
+          <ConnectorPoint PointX="5.46875" PointY="3.7975878906249996" />
+        </AssociationConnector>
+        <AssociationConnector Association="GSB_Equipe4.FK_RAPPORT_VISITE_MOTIF" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5" />
+          <ConnectorPoint PointX="2.625" PointY="4.625" />
+          <ConnectorPoint PointX="2.625" PointY="4.701396484375" />
+          <ConnectorPoint PointX="2.7535744349011204" PointY="4.5728220494738778" />
+          <ConnectorPoint PointX="2.8714255650988791" PointY="4.45497091927612" />
+          <ConnectorPoint PointX="3" PointY="4.326396484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="GSB_Equipe4.FK_OFFRIR_RAPPORT_VISITE" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.7112939453125" />
+          <ConnectorPoint PointX="5.25" PointY="2.7112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="GSB_Equipe4.FK_RAPPORT_VISITE_PRATICIEN" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.4373066923076925" />
+          <ConnectorPoint PointX="2.8125" PointY="6.8748066923076934" />
+          <ConnectorPoint PointX="2.8125" PointY="3.4611466471354162" />
+          <ConnectorPoint PointX="3" PointY="3.4611466471354162" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
