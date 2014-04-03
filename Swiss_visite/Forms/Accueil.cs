@@ -30,13 +30,12 @@ namespace Swiss_visite.Forms
                 btnPraticiens.Visible = false;
             }
         }
-
         // A la sortie du formulaire
         private void Accueil_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Exit();
         }
-
+        // Clic sur le bouton "quitter"
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             bool quit = AskConfirmQuitAppli();
@@ -46,7 +45,7 @@ namespace Swiss_visite.Forms
                 Application.Exit();
             }
         }
-
+        // Clic sur le bouton Deconnexion
         private void btnDeco_Click(object sender, EventArgs e)
         {
             bool deco = AskConfirmDecoAppli();
@@ -57,7 +56,6 @@ namespace Swiss_visite.Forms
                 this.Close();
                 newFormCon.Show();
             }
-            
         }
 
         #region Confirmation quitter
