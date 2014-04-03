@@ -7,19 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Swiss_visite.Forms
-{
-    public partial class Medicaments : Form
-    {
-        public Medicaments()
-        {
+namespace Swiss_visite.Forms {
+    public partial class Medicaments : Form {
+        private ConnectDBGSB ConnectBD;
+        public Medicaments(ConnectDBGSB connectBD) {
             InitializeComponent();
+            this.ConnectBD = connectBD;
         }
-
-        // A la sortie du formulaire
-        private void Medicaments_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Exit();
-        }
+        // ADD CODE HERE
     }
 }

@@ -7,19 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Swiss_visite.Forms
-{
-    public partial class Visiteurs : Form
-    {
-        public Visiteurs()
-        {
+namespace Swiss_visite.Forms {
+    public partial class Visiteurs : Form {
+        private ConnectDBGSB ConnectBD;
+        public Visiteurs(ConnectDBGSB connectBD) {
             InitializeComponent();
+            this.ConnectBD = connectBD;
         }
-
-        // A la sortie du formulaire
-        private void Visiteurs_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Exit();
-        }
+        // ADD CODE HERE
     }
 }

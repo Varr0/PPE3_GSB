@@ -7,20 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Swiss_visite.Forms
-{
-    public partial class Praticiens : Form
-    {
-        public Praticiens()
-        {
+namespace Swiss_visite.Forms {
+    public partial class Praticiens : Form {
+        private ConnectDBGSB ConnectBD;
+        public Praticiens(ConnectDBGSB connectBD) {
             InitializeComponent();
+            this.ConnectBD = connectBD;
         }
-
-        // A la sortie du formulaire
-        private void Praticiens_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Exit();
-        }
-
+        // ADD CODE HERE
     }
 }

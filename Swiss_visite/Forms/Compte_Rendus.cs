@@ -7,20 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Swiss_visite.Forms
-{
-    public partial class Compte_Rendus : Form
-    {
-        public Compte_Rendus()
-        {
+namespace Swiss_visite.Forms {
+    public partial class Compte_Rendus : Form {
+        private ConnectDBGSB ConnectBD;
+        public Compte_Rendus(ConnectDBGSB connectBD) {
             InitializeComponent();
+            this.ConnectBD = connectBD;
         }
-
-
-        // A la sortie du formulaire
-        private void Compte_Rendus_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Exit();
-        }
+        // ADD CODE HERE
     }
 }

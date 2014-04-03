@@ -44,6 +44,7 @@
             this.btnCompteRendu.TabIndex = 0;
             this.btnCompteRendu.Text = "Compte-Rendus";
             this.btnCompteRendu.UseVisualStyleBackColor = true;
+            this.btnCompteRendu.Click += new System.EventHandler(this.btnCompteRendu_Click);
             // 
             // btnVisiteurs
             // 
@@ -53,6 +54,7 @@
             this.btnVisiteurs.TabIndex = 1;
             this.btnVisiteurs.Text = "Visiteurs";
             this.btnVisiteurs.UseVisualStyleBackColor = true;
+            this.btnVisiteurs.Click += new System.EventHandler(this.btnVisiteurs_Click);
             // 
             // btnPraticiens
             // 
@@ -62,6 +64,7 @@
             this.btnPraticiens.TabIndex = 2;
             this.btnPraticiens.Text = "Praticiens";
             this.btnPraticiens.UseVisualStyleBackColor = true;
+            this.btnPraticiens.Click += new System.EventHandler(this.btnPraticiens_Click);
             // 
             // btnMédics
             // 
@@ -71,6 +74,7 @@
             this.btnMédics.TabIndex = 3;
             this.btnMédics.Text = "Médicaments";
             this.btnMédics.UseVisualStyleBackColor = true;
+            this.btnMédics.Click += new System.EventHandler(this.btnMédics_Click);
             // 
             // btnQuitter
             // 
