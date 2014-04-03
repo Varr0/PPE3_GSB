@@ -101,6 +101,12 @@
     <Compile Include="Forms\Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Medicaments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,8 +135,14 @@
     <EmbeddedResource Include="Forms\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Compte_Rendus.resx">
+      <DependentUpon>Compte_Rendus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Praticiens.resx">
       <DependentUpon>Praticiens.cs</DependentUpon>

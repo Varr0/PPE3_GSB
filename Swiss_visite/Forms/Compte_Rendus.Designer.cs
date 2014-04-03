@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Compte_Rendus
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Name = "Compte_Rendus";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Compte_Rendus";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -17,10 +17,17 @@ namespace Swiss_visite
         private ConnectDBGSB ConnectBD;
         public Connexion() {
             InitializeComponent();
-            // Instanciation de la chaine de connexion
-            ConnectBD = new ConnectDBGSB();
-            // Bind de la datasource
-            bsVisiteurs.DataSource = ConnectBD.COLLABORATEURs;
+            try {
+                // Instanciation de la chaine de connexion
+		        ConnectBD = new ConnectDBGSB();
+                // Bind de la datasource
+                bsVisiteurs.DataSource = ConnectBD.COLLABORATEURs;
+	        }
+	        catch (Exception) {
+                Forms.Error error = new Forms.Error();
+                this.Hide();
+                error.ShowDialog();
+	        }
         }
         // Appui sur le bouton "Quitter"
         private void btnQuitter_Click(object sender, EventArgs e) {
@@ -125,7 +132,7 @@ namespace Swiss_visite
             }
         }
         // A la sortie du formulaire
-        private void Connexion_Closing(object sender, System.ComponentModel.CancelEventArgs e) {
+        private void Connexion_Closing(object sender) {
             ConnectBD.Dispose();
             Application.Exit();
         }

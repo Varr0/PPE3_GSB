@@ -125,6 +125,7 @@
             this.Controls.Add(this.btnConnex);
             this.Controls.Add(this.btnQuitter);
             this.Name = "Connexion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Swiss Visite - GSB";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).EndInit();

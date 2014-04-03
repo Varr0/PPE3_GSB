@@ -26,7 +26,7 @@ namespace Swiss_visite.Forms {
             }
         }
         // A la sortie du formulaire
-        private void Accueil_Closing(object sender, System.ComponentModel.CancelEventArgs e) {
+        private void Accueil_Closing(object sender) {
             ConnectBD.Dispose();
             Application.Exit();
         }
