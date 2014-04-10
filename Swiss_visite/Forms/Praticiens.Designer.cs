@@ -233,6 +233,7 @@
             this.Controls.Add(this.labChercher);
             this.Controls.Add(this.btnChercher);
             this.Name = "Praticiens";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Praticiens";
             this.ResumeLayout(false);
             this.PerformLayout();

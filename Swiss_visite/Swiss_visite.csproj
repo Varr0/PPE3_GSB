@@ -144,6 +144,9 @@
     <EmbeddedResource Include="Forms\Error.resx">
       <DependentUpon>Error.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Medicaments.resx">
+      <DependentUpon>Medicaments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Praticiens.resx">
       <DependentUpon>Praticiens.cs</DependentUpon>
     </EmbeddedResource>

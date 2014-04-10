@@ -196,6 +196,7 @@
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblVisiteur);
             this.Name = "Visiteurs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visiteurs";
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).EndInit();
             this.ResumeLayout(false);

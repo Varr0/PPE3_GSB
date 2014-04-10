@@ -108,6 +108,7 @@
             this.Controls.Add(this.btnVisiteurs);
             this.Controls.Add(this.btnCompteRendu);
             this.Name = "Accueil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Accueil_Load);
             this.ResumeLayout(false);
