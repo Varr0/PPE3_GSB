@@ -50,6 +50,7 @@
             // lblVisiteur
             // 
             this.lblVisiteur.AutoSize = true;
+            this.lblVisiteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVisiteur.Location = new System.Drawing.Point(31, 20);
             this.lblVisiteur.Name = "lblVisiteur";
             this.lblVisiteur.Size = new System.Drawing.Size(44, 13);
@@ -154,7 +155,7 @@
             this.cBVisiteur.FormattingEnabled = true;
             this.cBVisiteur.Location = new System.Drawing.Point(102, 17);
             this.cBVisiteur.Name = "cBVisiteur";
-            this.cBVisiteur.Size = new System.Drawing.Size(245, 21);
+            this.cBVisiteur.Size = new System.Drawing.Size(201, 21);
             this.cBVisiteur.TabIndex = 12;
             this.cBVisiteur.ValueMember = "COL_MATRICULE";
             // 
@@ -180,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 335);
+            this.ClientSize = new System.Drawing.Size(326, 304);
             this.Controls.Add(this.lblAccesBD);
             this.Controls.Add(this.lblAcces);
             this.Controls.Add(this.cBVisiteur);

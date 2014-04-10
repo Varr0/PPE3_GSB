@@ -125,10 +125,15 @@
     <Compile Include="Forms\Visiteurs.Designer.cs">
       <DependentUpon>Visiteurs.cs</DependentUpon>
     </Compile>
-    <Compile Include="GSB_Equipe4DataSet.Designer.cs">
+    <Compile Include="GSB_Collaborateur_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_Equipe4DataSet.xsd</DependentUpon>
+      <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GSB_Praticien_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_Praticien_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,16 +172,27 @@
       <LastGenOutput>DB_GSB.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="GSB_Equipe4DataSet.xsc">
-      <DependentUpon>GSB_Equipe4DataSet.xsd</DependentUpon>
+    <None Include="GSB_Collaborateur_DataSet.xsc">
+      <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="GSB_Equipe4DataSet.xsd">
+    <None Include="GSB_Collaborateur_DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_Equipe4DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>GSB_Collaborateur_DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GSB_Equipe4DataSet.xss">
-      <DependentUpon>GSB_Equipe4DataSet.xsd</DependentUpon>
+    <None Include="GSB_Collaborateur_DataSet.xss">
+      <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_Praticien_DataSet.xsc">
+      <DependentUpon>GSB_Praticien_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_Praticien_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_Praticien_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_Praticien_DataSet.xss">
+      <DependentUpon>GSB_Praticien_DataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\ConnectDBGSB.datasource" />
     <None Include="Properties\Settings.settings">
