@@ -39,13 +39,14 @@
             this.cbChercher = new System.Windows.Forms.ComboBox();
             this.bntPrecedent = new System.Windows.Forms.Button();
             this.btnSuivant = new System.Windows.Forms.Button();
-            this.labNomA = new System.Windows.Forms.Label();
-            this.labNumA = new System.Windows.Forms.Label();
-            this.labPrenomA = new System.Windows.Forms.Label();
-            this.labCpA = new System.Windows.Forms.Label();
-            this.labVilleA = new System.Windows.Forms.Label();
-            this.labAdresseA = new System.Windows.Forms.Label();
-            this.labCoeffA = new System.Windows.Forms.Label();
+            this.labNomBD = new System.Windows.Forms.Label();
+            this.labNumBD = new System.Windows.Forms.Label();
+            this.labPrenomBD = new System.Windows.Forms.Label();
+            this.labVilleBD = new System.Windows.Forms.Label();
+            this.labAdresseBD = new System.Windows.Forms.Label();
+            this.labCoeffBD = new System.Windows.Forms.Label();
+            this.labCPBD = new System.Windows.Forms.Label();
+            this.labCP = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnChercher
@@ -78,7 +79,7 @@
             // labNom
             // 
             this.labNom.AutoSize = true;
-            this.labNom.Location = new System.Drawing.Point(51, 125);
+            this.labNom.Location = new System.Drawing.Point(51, 117);
             this.labNom.Name = "labNom";
             this.labNom.Size = new System.Drawing.Size(29, 13);
             this.labNom.TabIndex = 3;
@@ -87,7 +88,7 @@
             // labPrenom
             // 
             this.labPrenom.AutoSize = true;
-            this.labPrenom.Location = new System.Drawing.Point(51, 170);
+            this.labPrenom.Location = new System.Drawing.Point(51, 158);
             this.labPrenom.Name = "labPrenom";
             this.labPrenom.Size = new System.Drawing.Size(43, 13);
             this.labPrenom.TabIndex = 4;
@@ -96,7 +97,7 @@
             // labAdresse
             // 
             this.labAdresse.AutoSize = true;
-            this.labAdresse.Location = new System.Drawing.Point(51, 221);
+            this.labAdresse.Location = new System.Drawing.Point(51, 200);
             this.labAdresse.Name = "labAdresse";
             this.labAdresse.Size = new System.Drawing.Size(45, 13);
             this.labAdresse.TabIndex = 5;
@@ -105,7 +106,7 @@
             // labVille
             // 
             this.labVille.AutoSize = true;
-            this.labVille.Location = new System.Drawing.Point(51, 265);
+            this.labVille.Location = new System.Drawing.Point(51, 244);
             this.labVille.Name = "labVille";
             this.labVille.Size = new System.Drawing.Size(26, 13);
             this.labVille.TabIndex = 6;
@@ -114,7 +115,7 @@
             // labCoeff
             // 
             this.labCoeff.AutoSize = true;
-            this.labCoeff.Location = new System.Drawing.Point(51, 310);
+            this.labCoeff.Location = new System.Drawing.Point(51, 329);
             this.labCoeff.Name = "labCoeff";
             this.labCoeff.Size = new System.Drawing.Size(81, 13);
             this.labCoeff.TabIndex = 7;
@@ -130,7 +131,7 @@
             // 
             // bntPrecedent
             // 
-            this.bntPrecedent.Location = new System.Drawing.Point(54, 353);
+            this.bntPrecedent.Location = new System.Drawing.Point(44, 372);
             this.bntPrecedent.Name = "bntPrecedent";
             this.bntPrecedent.Size = new System.Drawing.Size(112, 23);
             this.bntPrecedent.TabIndex = 16;
@@ -139,88 +140,98 @@
             // 
             // btnSuivant
             // 
-            this.btnSuivant.Location = new System.Drawing.Point(279, 353);
+            this.btnSuivant.Location = new System.Drawing.Point(269, 372);
             this.btnSuivant.Name = "btnSuivant";
             this.btnSuivant.Size = new System.Drawing.Size(112, 23);
             this.btnSuivant.TabIndex = 17;
             this.btnSuivant.Text = "Suivant";
             this.btnSuivant.UseVisualStyleBackColor = true;
             // 
-            // labNomA
+            // labNomBD
             // 
-            this.labNomA.AutoSize = true;
-            this.labNomA.Location = new System.Drawing.Point(172, 125);
-            this.labNomA.Name = "labNomA";
-            this.labNomA.Size = new System.Drawing.Size(35, 13);
-            this.labNomA.TabIndex = 18;
-            this.labNomA.Text = "label1";
+            this.labNomBD.AutoSize = true;
+            this.labNomBD.Location = new System.Drawing.Point(172, 117);
+            this.labNomBD.Name = "labNomBD";
+            this.labNomBD.Size = new System.Drawing.Size(35, 13);
+            this.labNomBD.TabIndex = 18;
+            this.labNomBD.Text = "label2";
             // 
-            // labNumA
+            // labNumBD
             // 
-            this.labNumA.AutoSize = true;
-            this.labNumA.Location = new System.Drawing.Point(172, 73);
-            this.labNumA.Name = "labNumA";
-            this.labNumA.Size = new System.Drawing.Size(35, 13);
-            this.labNumA.TabIndex = 19;
-            this.labNumA.Text = "label2";
+            this.labNumBD.AutoSize = true;
+            this.labNumBD.Location = new System.Drawing.Point(172, 73);
+            this.labNumBD.Name = "labNumBD";
+            this.labNumBD.Size = new System.Drawing.Size(35, 13);
+            this.labNumBD.TabIndex = 19;
+            this.labNumBD.Text = "label1";
             // 
-            // labPrenomA
+            // labPrenomBD
             // 
-            this.labPrenomA.AutoSize = true;
-            this.labPrenomA.Location = new System.Drawing.Point(172, 170);
-            this.labPrenomA.Name = "labPrenomA";
-            this.labPrenomA.Size = new System.Drawing.Size(35, 13);
-            this.labPrenomA.TabIndex = 20;
-            this.labPrenomA.Text = "label3";
+            this.labPrenomBD.AutoSize = true;
+            this.labPrenomBD.Location = new System.Drawing.Point(172, 158);
+            this.labPrenomBD.Name = "labPrenomBD";
+            this.labPrenomBD.Size = new System.Drawing.Size(35, 13);
+            this.labPrenomBD.TabIndex = 20;
+            this.labPrenomBD.Text = "label3";
             // 
-            // labCpA
+            // labVilleBD
             // 
-            this.labCpA.AutoSize = true;
-            this.labCpA.Location = new System.Drawing.Point(172, 265);
-            this.labCpA.Name = "labCpA";
-            this.labCpA.Size = new System.Drawing.Size(35, 13);
-            this.labCpA.TabIndex = 21;
-            this.labCpA.Text = "label4";
+            this.labVilleBD.AutoSize = true;
+            this.labVilleBD.Location = new System.Drawing.Point(172, 244);
+            this.labVilleBD.Name = "labVilleBD";
+            this.labVilleBD.Size = new System.Drawing.Size(35, 13);
+            this.labVilleBD.TabIndex = 21;
+            this.labVilleBD.Text = "label5";
             // 
-            // labVilleA
+            // labAdresseBD
             // 
-            this.labVilleA.AutoSize = true;
-            this.labVilleA.Location = new System.Drawing.Point(261, 265);
-            this.labVilleA.Name = "labVilleA";
-            this.labVilleA.Size = new System.Drawing.Size(35, 13);
-            this.labVilleA.TabIndex = 22;
-            this.labVilleA.Text = "label5";
+            this.labAdresseBD.AutoSize = true;
+            this.labAdresseBD.Location = new System.Drawing.Point(172, 200);
+            this.labAdresseBD.Name = "labAdresseBD";
+            this.labAdresseBD.Size = new System.Drawing.Size(35, 13);
+            this.labAdresseBD.TabIndex = 23;
+            this.labAdresseBD.Text = "label4";
             // 
-            // labAdresseA
+            // labCoeffBD
             // 
-            this.labAdresseA.AutoSize = true;
-            this.labAdresseA.Location = new System.Drawing.Point(172, 221);
-            this.labAdresseA.Name = "labAdresseA";
-            this.labAdresseA.Size = new System.Drawing.Size(35, 13);
-            this.labAdresseA.TabIndex = 23;
-            this.labAdresseA.Text = "label6";
+            this.labCoeffBD.AutoSize = true;
+            this.labCoeffBD.Location = new System.Drawing.Point(172, 329);
+            this.labCoeffBD.Name = "labCoeffBD";
+            this.labCoeffBD.Size = new System.Drawing.Size(35, 13);
+            this.labCoeffBD.TabIndex = 24;
+            this.labCoeffBD.Text = "label7";
             // 
-            // labCoeffA
+            // labCPBD
             // 
-            this.labCoeffA.AutoSize = true;
-            this.labCoeffA.Location = new System.Drawing.Point(172, 310);
-            this.labCoeffA.Name = "labCoeffA";
-            this.labCoeffA.Size = new System.Drawing.Size(35, 13);
-            this.labCoeffA.TabIndex = 24;
-            this.labCoeffA.Text = "label7";
+            this.labCPBD.AutoSize = true;
+            this.labCPBD.Location = new System.Drawing.Point(172, 287);
+            this.labCPBD.Name = "labCPBD";
+            this.labCPBD.Size = new System.Drawing.Size(35, 13);
+            this.labCPBD.TabIndex = 26;
+            this.labCPBD.Text = "label6";
+            // 
+            // labCP
+            // 
+            this.labCP.AutoSize = true;
+            this.labCP.Location = new System.Drawing.Point(51, 287);
+            this.labCP.Name = "labCP";
+            this.labCP.Size = new System.Drawing.Size(64, 13);
+            this.labCP.TabIndex = 25;
+            this.labCP.Text = "Code Postal";
             // 
             // Praticiens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 383);
-            this.Controls.Add(this.labCoeffA);
-            this.Controls.Add(this.labAdresseA);
-            this.Controls.Add(this.labVilleA);
-            this.Controls.Add(this.labCpA);
-            this.Controls.Add(this.labPrenomA);
-            this.Controls.Add(this.labNumA);
-            this.Controls.Add(this.labNomA);
+            this.ClientSize = new System.Drawing.Size(422, 407);
+            this.Controls.Add(this.labCPBD);
+            this.Controls.Add(this.labCP);
+            this.Controls.Add(this.labCoeffBD);
+            this.Controls.Add(this.labAdresseBD);
+            this.Controls.Add(this.labVilleBD);
+            this.Controls.Add(this.labPrenomBD);
+            this.Controls.Add(this.labNumBD);
+            this.Controls.Add(this.labNomBD);
             this.Controls.Add(this.btnSuivant);
             this.Controls.Add(this.bntPrecedent);
             this.Controls.Add(this.cbChercher);
@@ -253,12 +264,13 @@
         private System.Windows.Forms.ComboBox cbChercher;
         private System.Windows.Forms.Button bntPrecedent;
         private System.Windows.Forms.Button btnSuivant;
-        private System.Windows.Forms.Label labNomA;
-        private System.Windows.Forms.Label labNumA;
-        private System.Windows.Forms.Label labPrenomA;
-        private System.Windows.Forms.Label labCpA;
-        private System.Windows.Forms.Label labVilleA;
-        private System.Windows.Forms.Label labAdresseA;
-        private System.Windows.Forms.Label labCoeffA;
+        private System.Windows.Forms.Label labNomBD;
+        private System.Windows.Forms.Label labNumBD;
+        private System.Windows.Forms.Label labPrenomBD;
+        private System.Windows.Forms.Label labVilleBD;
+        private System.Windows.Forms.Label labAdresseBD;
+        private System.Windows.Forms.Label labCoeffBD;
+        private System.Windows.Forms.Label labCPBD;
+        private System.Windows.Forms.Label labCP;
     }
 }
