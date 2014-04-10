@@ -89,11 +89,11 @@
     <Compile Include="Forms\Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Compte_Rendus.cs">
+    <Compile Include="Forms\CompteRendus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Compte_Rendus.Designer.cs">
-      <DependentUpon>Compte_Rendus.cs</DependentUpon>
+    <Compile Include="Forms\CompteRendus.Designer.cs">
+      <DependentUpon>CompteRendus.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Connexion.cs">
       <SubType>Form</SubType>
@@ -130,6 +130,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GSB_CompteRendus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_CompteRendus.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GSB_Medicaments_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,8 +150,8 @@
     <EmbeddedResource Include="Forms\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Compte_Rendus.resx">
-      <DependentUpon>Compte_Rendus.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CompteRendus.resx">
+      <DependentUpon>CompteRendus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
@@ -187,6 +192,17 @@
     </None>
     <None Include="GSB_Collaborateur_DataSet.xss">
       <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_CompteRendus.xsc">
+      <DependentUpon>GSB_CompteRendus.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_CompteRendus.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_CompteRendus.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_CompteRendus.xss">
+      <DependentUpon>GSB_CompteRendus.xsd</DependentUpon>
     </None>
     <None Include="GSB_Medicaments_DataSet.xsc">
       <DependentUpon>GSB_Medicaments_DataSet.xsd</DependentUpon>

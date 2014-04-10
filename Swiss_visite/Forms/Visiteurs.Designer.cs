@@ -30,13 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblVisiteur = new System.Windows.Forms.Label();
-            this.lblCode = new System.Windows.Forms.Label();
+            this.lblNom = new System.Windows.Forms.Label();
             this.lblAdresse = new System.Windows.Forms.Label();
             this.lblVille = new System.Windows.Forms.Label();
             this.lblCP = new System.Windows.Forms.Label();
             this.lblEmbauche = new System.Windows.Forms.Label();
-            this.lblCodeBD = new System.Windows.Forms.Label();
-            this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
+            this.lblNomBD = new System.Windows.Forms.Label();
             this.lblAdresseBD = new System.Windows.Forms.Label();
             this.lblVilleBD = new System.Windows.Forms.Label();
             this.lblCPBD = new System.Windows.Forms.Label();
@@ -44,6 +43,13 @@
             this.cBVisiteur = new System.Windows.Forms.ComboBox();
             this.lblAcces = new System.Windows.Forms.Label();
             this.lblAccesBD = new System.Windows.Forms.Label();
+            this.gSB_Collaborateur = new Swiss_visite.GSB_Collaborateur();
+            this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
+            this.cOLLABORATEURTableAdapter = new Swiss_visite.GSB_CollaborateurTableAdapters.COLLABORATEURTableAdapter();
+            this.tableAdapterManager = new Swiss_visite.GSB_CollaborateurTableAdapters.TableAdapterManager();
+            this.lblPrenomBD = new System.Windows.Forms.Label();
+            this.lblPrenom = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_Collaborateur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,19 +63,19 @@
             this.lblVisiteur.TabIndex = 1;
             this.lblVisiteur.Text = "Visiteur:";
             // 
-            // lblCode
+            // lblNom
             // 
-            this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(31, 62);
-            this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(35, 13);
-            this.lblCode.TabIndex = 2;
-            this.lblCode.Text = "Code:";
+            this.lblNom.AutoSize = true;
+            this.lblNom.Location = new System.Drawing.Point(31, 59);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(32, 13);
+            this.lblNom.TabIndex = 2;
+            this.lblNom.Text = "Nom:";
             // 
             // lblAdresse
             // 
             this.lblAdresse.AutoSize = true;
-            this.lblAdresse.Location = new System.Drawing.Point(31, 101);
+            this.lblAdresse.Location = new System.Drawing.Point(31, 130);
             this.lblAdresse.Name = "lblAdresse";
             this.lblAdresse.Size = new System.Drawing.Size(48, 13);
             this.lblAdresse.TabIndex = 3;
@@ -78,7 +84,7 @@
             // lblVille
             // 
             this.lblVille.AutoSize = true;
-            this.lblVille.Location = new System.Drawing.Point(31, 141);
+            this.lblVille.Location = new System.Drawing.Point(31, 170);
             this.lblVille.Name = "lblVille";
             this.lblVille.Size = new System.Drawing.Size(29, 13);
             this.lblVille.TabIndex = 4;
@@ -87,7 +93,7 @@
             // lblCP
             // 
             this.lblCP.AutoSize = true;
-            this.lblCP.Location = new System.Drawing.Point(31, 185);
+            this.lblCP.Location = new System.Drawing.Point(31, 214);
             this.lblCP.Name = "lblCP";
             this.lblCP.Size = new System.Drawing.Size(67, 13);
             this.lblCP.TabIndex = 5;
@@ -96,26 +102,26 @@
             // lblEmbauche
             // 
             this.lblEmbauche.AutoSize = true;
-            this.lblEmbauche.Location = new System.Drawing.Point(31, 227);
+            this.lblEmbauche.Location = new System.Drawing.Point(31, 256);
             this.lblEmbauche.Name = "lblEmbauche";
             this.lblEmbauche.Size = new System.Drawing.Size(72, 13);
             this.lblEmbauche.TabIndex = 6;
             this.lblEmbauche.Text = "Embauché le:";
             // 
-            // lblCodeBD
+            // lblNomBD
             // 
-            this.lblCodeBD.AutoSize = true;
-            this.lblCodeBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_MATRICULE", true));
-            this.lblCodeBD.Location = new System.Drawing.Point(137, 62);
-            this.lblCodeBD.Name = "lblCodeBD";
-            this.lblCodeBD.Size = new System.Drawing.Size(0, 13);
-            this.lblCodeBD.TabIndex = 7;
+            this.lblNomBD.AutoSize = true;
+            this.lblNomBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_NOM", true));
+            this.lblNomBD.Location = new System.Drawing.Point(137, 59);
+            this.lblNomBD.Name = "lblNomBD";
+            this.lblNomBD.Size = new System.Drawing.Size(0, 13);
+            this.lblNomBD.TabIndex = 7;
             // 
             // lblAdresseBD
             // 
             this.lblAdresseBD.AutoSize = true;
             this.lblAdresseBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_ADRESSE", true));
-            this.lblAdresseBD.Location = new System.Drawing.Point(137, 101);
+            this.lblAdresseBD.Location = new System.Drawing.Point(137, 130);
             this.lblAdresseBD.Name = "lblAdresseBD";
             this.lblAdresseBD.Size = new System.Drawing.Size(0, 13);
             this.lblAdresseBD.TabIndex = 8;
@@ -124,7 +130,7 @@
             // 
             this.lblVilleBD.AutoSize = true;
             this.lblVilleBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_VILLE", true));
-            this.lblVilleBD.Location = new System.Drawing.Point(137, 141);
+            this.lblVilleBD.Location = new System.Drawing.Point(137, 170);
             this.lblVilleBD.Name = "lblVilleBD";
             this.lblVilleBD.Size = new System.Drawing.Size(0, 13);
             this.lblVilleBD.TabIndex = 9;
@@ -133,7 +139,7 @@
             // 
             this.lblCPBD.AutoSize = true;
             this.lblCPBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_CP", true));
-            this.lblCPBD.Location = new System.Drawing.Point(137, 185);
+            this.lblCPBD.Location = new System.Drawing.Point(137, 214);
             this.lblCPBD.Name = "lblCPBD";
             this.lblCPBD.Size = new System.Drawing.Size(0, 13);
             this.lblCPBD.TabIndex = 10;
@@ -142,15 +148,16 @@
             // 
             this.lblEmbaucheBD.AutoSize = true;
             this.lblEmbaucheBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_DATEEMBAUCHE", true));
-            this.lblEmbaucheBD.Location = new System.Drawing.Point(137, 227);
+            this.lblEmbaucheBD.Location = new System.Drawing.Point(137, 256);
             this.lblEmbaucheBD.Name = "lblEmbaucheBD";
             this.lblEmbaucheBD.Size = new System.Drawing.Size(0, 13);
             this.lblEmbaucheBD.TabIndex = 11;
             // 
             // cBVisiteur
             // 
+            this.cBVisiteur.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_MATRICULE", true));
             this.cBVisiteur.DataSource = this.bsVisiteurs;
-            this.cBVisiteur.DisplayMember = "COL_NOM";
+            this.cBVisiteur.DisplayMember = "COL_MATRICULE";
             this.cBVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBVisiteur.FormattingEnabled = true;
             this.cBVisiteur.Location = new System.Drawing.Point(102, 17);
@@ -162,7 +169,7 @@
             // lblAcces
             // 
             this.lblAcces.AutoSize = true;
-            this.lblAcces.Location = new System.Drawing.Point(31, 270);
+            this.lblAcces.Location = new System.Drawing.Point(31, 299);
             this.lblAcces.Name = "lblAcces";
             this.lblAcces.Size = new System.Drawing.Size(84, 13);
             this.lblAcces.TabIndex = 13;
@@ -172,16 +179,56 @@
             // 
             this.lblAccesBD.AutoSize = true;
             this.lblAccesBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_NIVEAU_ACCES", true));
-            this.lblAccesBD.Location = new System.Drawing.Point(137, 270);
+            this.lblAccesBD.Location = new System.Drawing.Point(137, 299);
             this.lblAccesBD.Name = "lblAccesBD";
             this.lblAccesBD.Size = new System.Drawing.Size(0, 13);
             this.lblAccesBD.TabIndex = 14;
+            // 
+            // gSB_Collaborateur
+            // 
+            this.gSB_Collaborateur.DataSetName = "GSB_Collaborateur";
+            this.gSB_Collaborateur.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bsVisiteurs
+            // 
+            this.bsVisiteurs.DataMember = "COLLABORATEUR";
+            this.bsVisiteurs.DataSource = this.gSB_Collaborateur;
+            // 
+            // cOLLABORATEURTableAdapter
+            // 
+            this.cOLLABORATEURTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.COLLABORATEURTableAdapter = this.cOLLABORATEURTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Swiss_visite.GSB_CollaborateurTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // lblPrenomBD
+            // 
+            this.lblPrenomBD.AutoSize = true;
+            this.lblPrenomBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_PRENOM", true));
+            this.lblPrenomBD.Location = new System.Drawing.Point(137, 94);
+            this.lblPrenomBD.Name = "lblPrenomBD";
+            this.lblPrenomBD.Size = new System.Drawing.Size(0, 13);
+            this.lblPrenomBD.TabIndex = 16;
+            // 
+            // lblPrenom
+            // 
+            this.lblPrenom.AutoSize = true;
+            this.lblPrenom.Location = new System.Drawing.Point(31, 94);
+            this.lblPrenom.Name = "lblPrenom";
+            this.lblPrenom.Size = new System.Drawing.Size(46, 13);
+            this.lblPrenom.TabIndex = 15;
+            this.lblPrenom.Text = "Prenom:";
             // 
             // Visiteurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 304);
+            this.ClientSize = new System.Drawing.Size(326, 332);
+            this.Controls.Add(this.lblPrenomBD);
+            this.Controls.Add(this.lblPrenom);
             this.Controls.Add(this.lblAccesBD);
             this.Controls.Add(this.lblAcces);
             this.Controls.Add(this.cBVisiteur);
@@ -189,16 +236,17 @@
             this.Controls.Add(this.lblCPBD);
             this.Controls.Add(this.lblVilleBD);
             this.Controls.Add(this.lblAdresseBD);
-            this.Controls.Add(this.lblCodeBD);
+            this.Controls.Add(this.lblNomBD);
             this.Controls.Add(this.lblEmbauche);
             this.Controls.Add(this.lblCP);
             this.Controls.Add(this.lblVille);
             this.Controls.Add(this.lblAdresse);
-            this.Controls.Add(this.lblCode);
+            this.Controls.Add(this.lblNom);
             this.Controls.Add(this.lblVisiteur);
             this.Name = "Visiteurs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visiteurs";
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_Collaborateur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,12 +256,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblVisiteur;
-        private System.Windows.Forms.Label lblCode;
+        private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblAdresse;
         private System.Windows.Forms.Label lblVille;
         private System.Windows.Forms.Label lblCP;
         private System.Windows.Forms.Label lblEmbauche;
-        private System.Windows.Forms.Label lblCodeBD;
+        private System.Windows.Forms.Label lblNomBD;
         private System.Windows.Forms.Label lblAdresseBD;
         private System.Windows.Forms.Label lblVilleBD;
         private System.Windows.Forms.Label lblCPBD;
@@ -221,7 +269,12 @@
         private System.Windows.Forms.ComboBox cBVisiteur;
         private System.Windows.Forms.Label lblAcces;
         private System.Windows.Forms.Label lblAccesBD;
+        private GSB_Collaborateur gSB_Collaborateur;
         private System.Windows.Forms.BindingSource bsVisiteurs;
+        private GSB_CollaborateurTableAdapters.COLLABORATEURTableAdapter cOLLABORATEURTableAdapter;
+        private GSB_CollaborateurTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Label lblPrenomBD;
+        private System.Windows.Forms.Label lblPrenom;
 
     }
 }

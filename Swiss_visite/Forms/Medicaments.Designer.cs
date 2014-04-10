@@ -115,6 +115,7 @@
             this.lblComposBD.AutoSize = true;
             this.lblComposBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMedicaments, "MED_COMPOSITION", true));
             this.lblComposBD.Location = new System.Drawing.Point(128, 106);
+            this.lblComposBD.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblComposBD.Name = "lblComposBD";
             this.lblComposBD.Size = new System.Drawing.Size(0, 13);
             this.lblComposBD.TabIndex = 5;
@@ -132,7 +133,7 @@
             // 
             this.lblEffetsBD.AutoSize = true;
             this.lblEffetsBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMedicaments, "MED_EFFETS", true));
-            this.lblEffetsBD.Location = new System.Drawing.Point(128, 148);
+            this.lblEffetsBD.Location = new System.Drawing.Point(128, 165);
             this.lblEffetsBD.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblEffetsBD.Name = "lblEffetsBD";
             this.lblEffetsBD.Size = new System.Drawing.Size(0, 13);
@@ -141,7 +142,7 @@
             // lblEffets
             // 
             this.lblEffets.AutoSize = true;
-            this.lblEffets.Location = new System.Drawing.Point(22, 148);
+            this.lblEffets.Location = new System.Drawing.Point(22, 165);
             this.lblEffets.Name = "lblEffets";
             this.lblEffets.Size = new System.Drawing.Size(37, 13);
             this.lblEffets.TabIndex = 6;
@@ -151,7 +152,7 @@
             // 
             this.lblContreIndicBD.AutoSize = true;
             this.lblContreIndicBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMedicaments, "MED_CONTREINDIC", true));
-            this.lblContreIndicBD.Location = new System.Drawing.Point(128, 219);
+            this.lblContreIndicBD.Location = new System.Drawing.Point(128, 236);
             this.lblContreIndicBD.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblContreIndicBD.Name = "lblContreIndicBD";
             this.lblContreIndicBD.Size = new System.Drawing.Size(0, 13);
@@ -160,7 +161,7 @@
             // lblContreIndic
             // 
             this.lblContreIndic.AutoSize = true;
-            this.lblContreIndic.Location = new System.Drawing.Point(22, 219);
+            this.lblContreIndic.Location = new System.Drawing.Point(22, 236);
             this.lblContreIndic.Name = "lblContreIndic";
             this.lblContreIndic.Size = new System.Drawing.Size(90, 13);
             this.lblContreIndic.TabIndex = 8;
@@ -170,7 +171,7 @@
             // 
             this.lblPrixBD.AutoSize = true;
             this.lblPrixBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMedicaments, "MED_PRIXECHANTILLON", true));
-            this.lblPrixBD.Location = new System.Drawing.Point(128, 293);
+            this.lblPrixBD.Location = new System.Drawing.Point(128, 310);
             this.lblPrixBD.Name = "lblPrixBD";
             this.lblPrixBD.Size = new System.Drawing.Size(0, 13);
             this.lblPrixBD.TabIndex = 11;
@@ -178,7 +179,7 @@
             // lblPrix
             // 
             this.lblPrix.AutoSize = true;
-            this.lblPrix.Location = new System.Drawing.Point(22, 293);
+            this.lblPrix.Location = new System.Drawing.Point(22, 310);
             this.lblPrix.Name = "lblPrix";
             this.lblPrix.Size = new System.Drawing.Size(97, 13);
             this.lblPrix.TabIndex = 10;
@@ -188,7 +189,7 @@
             // 
             this.lblDateSortieBD.AutoSize = true;
             this.lblDateSortieBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsMedicaments, "MED_DATESORTIE", true));
-            this.lblDateSortieBD.Location = new System.Drawing.Point(128, 328);
+            this.lblDateSortieBD.Location = new System.Drawing.Point(128, 345);
             this.lblDateSortieBD.Name = "lblDateSortieBD";
             this.lblDateSortieBD.Size = new System.Drawing.Size(0, 13);
             this.lblDateSortieBD.TabIndex = 13;
@@ -196,7 +197,7 @@
             // lblDateSortie
             // 
             this.lblDateSortie.AutoSize = true;
-            this.lblDateSortie.Location = new System.Drawing.Point(22, 328);
+            this.lblDateSortie.Location = new System.Drawing.Point(22, 345);
             this.lblDateSortie.Name = "lblDateSortie";
             this.lblDateSortie.Size = new System.Drawing.Size(63, 13);
             this.lblDateSortie.TabIndex = 12;
@@ -206,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 370);
+            this.ClientSize = new System.Drawing.Size(435, 376);
             this.Controls.Add(this.lblDateSortieBD);
             this.Controls.Add(this.lblDateSortie);
             this.Controls.Add(this.lblPrixBD);

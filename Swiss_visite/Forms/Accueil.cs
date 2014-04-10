@@ -50,7 +50,7 @@ namespace Swiss_visite.Forms {
         }
         // Appui sur le bouton Compte-Rendus
         private void btnCompteRendu_Click(object sender, EventArgs e) {
-            Forms.Compte_Rendus compteRendus = new Forms.Compte_Rendus(ConnectBD);
+            Forms.CompteRendus compteRendus = new Forms.CompteRendus(ConnectBD);
             compteRendus.Show();
         }
         // Appui sur le bouton Medicaments
