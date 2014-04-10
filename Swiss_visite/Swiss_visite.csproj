@@ -130,6 +130,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GSB_Medicaments_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_Medicaments_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GSB_Praticien_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -182,6 +187,17 @@
     </None>
     <None Include="GSB_Collaborateur_DataSet.xss">
       <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_Medicaments_DataSet.xsc">
+      <DependentUpon>GSB_Medicaments_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_Medicaments_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_Medicaments_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_Medicaments_DataSet.xss">
+      <DependentUpon>GSB_Medicaments_DataSet.xsd</DependentUpon>
     </None>
     <None Include="GSB_Praticien_DataSet.xsc">
       <DependentUpon>GSB_Praticien_DataSet.xsd</DependentUpon>
