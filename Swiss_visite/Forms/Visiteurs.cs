@@ -13,7 +13,7 @@ namespace Swiss_visite.Forms {
         public Visiteurs(ConnectDBGSB connectBD) {
             InitializeComponent();
             this.ConnectBD = connectBD;
+            bsVisiteurs.DataSource = ConnectBD.COLLABORATEURs;
         }
-        // ADD CODE HERE
     }
 }
