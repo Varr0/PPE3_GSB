@@ -47,8 +47,6 @@
             this.lblPrix = new System.Windows.Forms.Label();
             this.lblDateSortieBD = new System.Windows.Forms.Label();
             this.lblDateSortie = new System.Windows.Forms.Label();
-            this.lblNew = new System.Windows.Forms.Label();
-            this.checkBoxNew = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicaments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_Medicaments)).BeginInit();
             this.SuspendLayout();
@@ -205,32 +203,11 @@
             this.lblDateSortie.TabIndex = 12;
             this.lblDateSortie.Text = "Date Sortie:";
             // 
-            // lblNew
-            // 
-            this.lblNew.AutoSize = true;
-            this.lblNew.Location = new System.Drawing.Point(259, 345);
-            this.lblNew.Name = "lblNew";
-            this.lblNew.Size = new System.Drawing.Size(54, 13);
-            this.lblNew.TabIndex = 14;
-            this.lblNew.Text = "Nouveau:";
-            // 
-            // checkBoxNew
-            // 
-            this.checkBoxNew.AutoSize = true;
-            this.checkBoxNew.Enabled = false;
-            this.checkBoxNew.Location = new System.Drawing.Point(368, 344);
-            this.checkBoxNew.Name = "checkBoxNew";
-            this.checkBoxNew.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxNew.TabIndex = 15;
-            this.checkBoxNew.UseVisualStyleBackColor = true;
-            // 
             // Medicaments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 408);
-            this.Controls.Add(this.checkBoxNew);
-            this.Controls.Add(this.lblNew);
             this.Controls.Add(this.lblDateSortieBD);
             this.Controls.Add(this.lblDateSortie);
             this.Controls.Add(this.lblPrixBD);
@@ -275,7 +252,5 @@
         private System.Windows.Forms.Label lblPrix;
         private System.Windows.Forms.Label lblDateSortieBD;
         private System.Windows.Forms.Label lblDateSortie;
-        private System.Windows.Forms.Label lblNew;
-        private System.Windows.Forms.CheckBox checkBoxNew;
     }
 }

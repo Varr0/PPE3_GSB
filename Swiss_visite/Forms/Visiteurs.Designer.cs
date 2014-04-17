@@ -36,6 +36,8 @@
             this.lblCP = new System.Windows.Forms.Label();
             this.lblEmbauche = new System.Windows.Forms.Label();
             this.lblNomBD = new System.Windows.Forms.Label();
+            this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
+            this.gSB_Collaborateur = new Swiss_visite.Datasets.GSB_Collaborateur();
             this.lblAdresseBD = new System.Windows.Forms.Label();
             this.lblVilleBD = new System.Windows.Forms.Label();
             this.lblCPBD = new System.Windows.Forms.Label();
@@ -43,14 +45,12 @@
             this.cBVisiteur = new System.Windows.Forms.ComboBox();
             this.lblAcces = new System.Windows.Forms.Label();
             this.lblAccesBD = new System.Windows.Forms.Label();
-            this.gSB_Collaborateur = new Swiss_visite.Datasets.GSB_Collaborateur();
-            this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
             this.cOLLABORATEURTableAdapter = new Swiss_visite.Datasets.GSB_CollaborateurTableAdapters.COLLABORATEURTableAdapter();
             this.tableAdapterManager = new Swiss_visite.Datasets.GSB_CollaborateurTableAdapters.TableAdapterManager();
             this.lblPrenomBD = new System.Windows.Forms.Label();
             this.lblPrenom = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gSB_Collaborateur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_Collaborateur)).BeginInit();
             this.SuspendLayout();
             // 
             // lblVisiteur
@@ -117,6 +117,16 @@
             this.lblNomBD.Size = new System.Drawing.Size(0, 13);
             this.lblNomBD.TabIndex = 7;
             // 
+            // bsVisiteurs
+            // 
+            this.bsVisiteurs.DataMember = "COLLABORATEUR";
+            this.bsVisiteurs.DataSource = this.gSB_Collaborateur;
+            // 
+            // gSB_Collaborateur
+            // 
+            this.gSB_Collaborateur.DataSetName = "GSB_Collaborateur";
+            this.gSB_Collaborateur.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lblAdresseBD
             // 
             this.lblAdresseBD.AutoSize = true;
@@ -155,7 +165,6 @@
             // 
             // cBVisiteur
             // 
-            this.cBVisiteur.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsVisiteurs, "COL_MATRICULE", true));
             this.cBVisiteur.DataSource = this.bsVisiteurs;
             this.cBVisiteur.DisplayMember = "COL_MATRICULE";
             this.cBVisiteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -183,16 +192,6 @@
             this.lblAccesBD.Name = "lblAccesBD";
             this.lblAccesBD.Size = new System.Drawing.Size(0, 13);
             this.lblAccesBD.TabIndex = 14;
-            // 
-            // gSB_Collaborateur
-            // 
-            this.gSB_Collaborateur.DataSetName = "GSB_Collaborateur";
-            this.gSB_Collaborateur.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bsVisiteurs
-            // 
-            this.bsVisiteurs.DataMember = "COLLABORATEUR";
-            this.bsVisiteurs.DataSource = this.gSB_Collaborateur;
             // 
             // cOLLABORATEURTableAdapter
             // 
@@ -246,8 +245,8 @@
             this.Name = "Visiteurs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visiteurs";
-            ((System.ComponentModel.ISupportInitialize)(this.gSB_Collaborateur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_Collaborateur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
