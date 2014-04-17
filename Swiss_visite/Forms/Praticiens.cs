@@ -15,5 +15,6 @@ namespace Swiss_visite.Forms {
             this.ConnectBD = connectBD;
             bsPraticiens.DataSource = ConnectBD.PRATICIENs;
         }
+        //TODO: Modifier la liste déroulante de sélection => mettre nom/prenom de chaque praticien ?
     }
 }

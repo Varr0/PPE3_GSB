@@ -14,6 +14,13 @@ namespace Swiss_visite.Forms {
             InitializeComponent();
             this.ConnectBD = connectBD;
             bsRapport.DataSource = ConnectBD.RAPPORT_VISITE;
+            bsMotif.DataSource = connectBD.MOTIFs;
+        }
+
+        //TODO: faire fonctionner l'affichage des motifs.
+        private void btnEnregistrer_Click(object sender, EventArgs e)
+        {
+            //Add code to save data.
         }
     }
 }

@@ -53,11 +53,12 @@ namespace Swiss_visite
                 string user = tbUser.Text;
                 string pwd = tbPwd.Text;
 
-                // Requète LINQ récup collaborateurs
+                // Requète LINQ de récup collaborateurs
                 var userQueryCol = from IDC in ConnectBD.COLLABORATEURs
                                    select IDC;
-                // Booléen de vérif de co
-                bool trouve = false;
+                // Booléens de vérif de connexion
+                bool trouveUser = false;
+                bool trouvePwd = false;
                 foreach (COLLABORATEUR c in userQueryCol) {
                     #region Reformatage de données char => string
                     // On reformate les données char avec des vides inutiles en string
@@ -78,10 +79,10 @@ namespace Swiss_visite
                         j++;
                     }
                     #endregion
-
                     // Controle de saisie réussi
                     if (userTS2 == user && pwdTS2 == pwd) {
-                        trouve = true;
+                        trouveUser = true;
+                        trouvePwd = true;
                         // Reformatage nom/prénom pour envoi et affichage au form accueil
                         String nomTS = "";
                         String nomTS2 = "";
@@ -124,10 +125,19 @@ namespace Swiss_visite
                         // On cache le form actuel
                         this.Hide();
                     }
+                    else if (userTS2 == user && pwdTS2 != pwd) {
+                        trouveUser = true;
+                    }
                 }
-                // Pas de correspondance user/pwd
-                if (trouve == false) {
+                // Contrôles de saisie utilisateur
+                if (trouveUser == false && trouvePwd == false) {
                     MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.");
+                    tbUser.Text = "";
+                    tbPwd.Text = "";
+                } 
+                else if (trouveUser == true && trouvePwd == false) {
+                    MessageBox.Show("Mot de passe incorrect.");
+                    tbPwd.Text = "";
                 }
             }
         }

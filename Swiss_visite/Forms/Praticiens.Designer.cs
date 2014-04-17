@@ -37,7 +37,7 @@
             this.labCoeff = new System.Windows.Forms.Label();
             this.cbChercher = new System.Windows.Forms.ComboBox();
             this.bsPraticiens = new System.Windows.Forms.BindingSource(this.components);
-            this.gSB_Praticien = new Swiss_visite.GSB_Praticien();
+            this.gSB_Praticien = new Swiss_visite.Datasets.GSB_Praticien();
             this.labNomBD = new System.Windows.Forms.Label();
             this.labPrenomBD = new System.Windows.Forms.Label();
             this.labVilleBD = new System.Windows.Forms.Label();
@@ -45,8 +45,8 @@
             this.labCoeffBD = new System.Windows.Forms.Label();
             this.labCPBD = new System.Windows.Forms.Label();
             this.labCP = new System.Windows.Forms.Label();
-            this.pRATICIENTableAdapter = new Swiss_visite.GSB_PraticienTableAdapters.PRATICIENTableAdapter();
-            this.tableAdapterManager = new Swiss_visite.GSB_PraticienTableAdapters.TableAdapterManager();
+            this.pRATICIENTableAdapter = new Swiss_visite.Datasets.GSB_PraticienTableAdapters.PRATICIENTableAdapter();
+            this.tableAdapterManager = new Swiss_visite.Datasets.GSB_PraticienTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.bsPraticiens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_Praticien)).BeginInit();
             this.SuspendLayout();
@@ -198,7 +198,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.PRATICIENTableAdapter = this.pRATICIENTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Swiss_visite.GSB_PraticienTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Swiss_visite.Datasets.GSB_PraticienTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // Praticiens
             // 
@@ -245,9 +245,9 @@
         private System.Windows.Forms.Label labCoeffBD;
         private System.Windows.Forms.Label labCPBD;
         private System.Windows.Forms.Label labCP;
-        private GSB_Praticien gSB_Praticien;
+        private Datasets.GSB_Praticien gSB_Praticien;
         private System.Windows.Forms.BindingSource bsPraticiens;
-        private GSB_PraticienTableAdapters.PRATICIENTableAdapter pRATICIENTableAdapter;
-        private GSB_PraticienTableAdapters.TableAdapterManager tableAdapterManager;
+        private Datasets.GSB_PraticienTableAdapters.PRATICIENTableAdapter pRATICIENTableAdapter;
+        private Datasets.GSB_PraticienTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

@@ -125,25 +125,30 @@
     <Compile Include="Forms\Visiteurs.Designer.cs">
       <DependentUpon>Visiteurs.cs</DependentUpon>
     </Compile>
-    <Compile Include="GSB_Collaborateur_DataSet.Designer.cs">
+    <Compile Include="Datasets\GSB_Collaborateur_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GSB_CompteRendus.Designer.cs">
+    <Compile Include="Datasets\GSB_CompteRendus.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_CompteRendus.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GSB_Medicaments_DataSet.Designer.cs">
+    <Compile Include="Datasets\GSB_Medicaments_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_Medicaments_DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GSB_Praticien_DataSet.Designer.cs">
+    <Compile Include="Datasets\GSB_Praticien_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_Praticien_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\GSB_Motif.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_Motif.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,49 +187,60 @@
       <LastGenOutput>DB_GSB.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="GSB_Collaborateur_DataSet.xsc">
+    <None Include="Datasets\GSB_Collaborateur_DataSet.xsc">
       <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="GSB_Collaborateur_DataSet.xsd">
+    <None Include="Datasets\GSB_Collaborateur_DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GSB_Collaborateur_DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GSB_Collaborateur_DataSet.xss">
+    <None Include="Datasets\GSB_Collaborateur_DataSet.xss">
       <DependentUpon>GSB_Collaborateur_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="GSB_CompteRendus.xsc">
+    <None Include="Datasets\GSB_CompteRendus.xsc">
       <DependentUpon>GSB_CompteRendus.xsd</DependentUpon>
     </None>
-    <None Include="GSB_CompteRendus.xsd">
+    <None Include="Datasets\GSB_CompteRendus.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GSB_CompteRendus.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GSB_CompteRendus.xss">
+    <None Include="Datasets\GSB_CompteRendus.xss">
       <DependentUpon>GSB_CompteRendus.xsd</DependentUpon>
     </None>
-    <None Include="GSB_Medicaments_DataSet.xsc">
+    <None Include="Datasets\GSB_Medicaments_DataSet.xsc">
       <DependentUpon>GSB_Medicaments_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="GSB_Medicaments_DataSet.xsd">
+    <None Include="Datasets\GSB_Medicaments_DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GSB_Medicaments_DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GSB_Medicaments_DataSet.xss">
+    <None Include="Datasets\GSB_Medicaments_DataSet.xss">
       <DependentUpon>GSB_Medicaments_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="GSB_Praticien_DataSet.xsc">
+    <None Include="Datasets\GSB_Praticien_DataSet.xsc">
       <DependentUpon>GSB_Praticien_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="GSB_Praticien_DataSet.xsd">
+    <None Include="Datasets\GSB_Praticien_DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GSB_Praticien_DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GSB_Praticien_DataSet.xss">
+    <None Include="Datasets\GSB_Praticien_DataSet.xss">
       <DependentUpon>GSB_Praticien_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\GSB_Motif.xsc">
+      <DependentUpon>GSB_Motif.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\GSB_Motif.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_Motif.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\GSB_Motif.xss">
+      <DependentUpon>GSB_Motif.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\ConnectDBGSB.datasource" />
     <None Include="Properties\Settings.settings">

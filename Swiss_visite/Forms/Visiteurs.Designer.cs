@@ -43,10 +43,10 @@
             this.cBVisiteur = new System.Windows.Forms.ComboBox();
             this.lblAcces = new System.Windows.Forms.Label();
             this.lblAccesBD = new System.Windows.Forms.Label();
-            this.gSB_Collaborateur = new Swiss_visite.GSB_Collaborateur();
+            this.gSB_Collaborateur = new Swiss_visite.Datasets.GSB_Collaborateur();
             this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
-            this.cOLLABORATEURTableAdapter = new Swiss_visite.GSB_CollaborateurTableAdapters.COLLABORATEURTableAdapter();
-            this.tableAdapterManager = new Swiss_visite.GSB_CollaborateurTableAdapters.TableAdapterManager();
+            this.cOLLABORATEURTableAdapter = new Swiss_visite.Datasets.GSB_CollaborateurTableAdapters.COLLABORATEURTableAdapter();
+            this.tableAdapterManager = new Swiss_visite.Datasets.GSB_CollaborateurTableAdapters.TableAdapterManager();
             this.lblPrenomBD = new System.Windows.Forms.Label();
             this.lblPrenom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_Collaborateur)).BeginInit();
@@ -202,7 +202,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.COLLABORATEURTableAdapter = this.cOLLABORATEURTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Swiss_visite.GSB_CollaborateurTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Swiss_visite.Datasets.GSB_CollaborateurTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // lblPrenomBD
             // 
@@ -269,10 +269,10 @@
         private System.Windows.Forms.ComboBox cBVisiteur;
         private System.Windows.Forms.Label lblAcces;
         private System.Windows.Forms.Label lblAccesBD;
-        private GSB_Collaborateur gSB_Collaborateur;
+        private Datasets.GSB_Collaborateur gSB_Collaborateur;
         private System.Windows.Forms.BindingSource bsVisiteurs;
-        private GSB_CollaborateurTableAdapters.COLLABORATEURTableAdapter cOLLABORATEURTableAdapter;
-        private GSB_CollaborateurTableAdapters.TableAdapterManager tableAdapterManager;
+        private Datasets.GSB_CollaborateurTableAdapters.COLLABORATEURTableAdapter cOLLABORATEURTableAdapter;
+        private Datasets.GSB_CollaborateurTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label lblPrenomBD;
         private System.Windows.Forms.Label lblPrenom;
 

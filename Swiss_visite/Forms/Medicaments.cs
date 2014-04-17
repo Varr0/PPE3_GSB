@@ -15,5 +15,6 @@ namespace Swiss_visite.Forms {
             this.ConnectBD = connectBD;
             bsMedicaments.DataSource = ConnectBD.MEDICAMENTs;
         }
+        //TODO: mettre en rapport le champ "Nouveau" de la BD avec la checkBoxNew pour affichage.
     }
 }

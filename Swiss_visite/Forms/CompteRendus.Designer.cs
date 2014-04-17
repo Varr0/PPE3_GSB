@@ -31,13 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.cbRapport = new System.Windows.Forms.ComboBox();
             this.bsRapport = new System.Windows.Forms.BindingSource(this.components);
-            this.gSB_CompteRendus = new Swiss_visite.GSB_CompteRendus();
-            this.rAPPORT_VISITETableAdapter = new Swiss_visite.GSB_CompteRendusTableAdapters.RAPPORT_VISITETableAdapter();
-            this.tableAdapterManager = new Swiss_visite.GSB_CompteRendusTableAdapters.TableAdapterManager();
+            this.gSB_CompteRendus = new Swiss_visite.Datasets.GSB_CompteRendus();
+            this.rAPPORT_VISITETableAdapter = new Swiss_visite.Datasets.GSB_CompteRendusTableAdapters.RAPPORT_VISITETableAdapter();
+            this.tableAdapterManager = new Swiss_visite.Datasets.GSB_CompteRendusTableAdapters.TableAdapterManager();
             this.lblRapport = new System.Windows.Forms.Label();
             this.lblCollabBD = new System.Windows.Forms.Label();
             this.lblCollab = new System.Windows.Forms.Label();
-            this.lblMotifBD = new System.Windows.Forms.Label();
             this.lblMotif = new System.Windows.Forms.Label();
             this.lblPraticienBD = new System.Windows.Forms.Label();
             this.lblPraticien = new System.Windows.Forms.Label();
@@ -47,8 +46,16 @@
             this.lblDateSaisie = new System.Windows.Forms.Label();
             this.lblCoeffConfianceBD = new System.Windows.Forms.Label();
             this.lblCoeffConfiance = new System.Windows.Forms.Label();
+            this.cbMotif = new System.Windows.Forms.ComboBox();
+            this.gSB_Motif = new Swiss_visite.Datasets.GSB_Motif();
+            this.bsMotif = new System.Windows.Forms.BindingSource(this.components);
+            this.mOTIFTableAdapter = new Swiss_visite.Datasets.GSB_MotifTableAdapters.MOTIFTableAdapter();
+            this.tableAdapterManager1 = new Swiss_visite.Datasets.GSB_MotifTableAdapters.TableAdapterManager();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_CompteRendus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_Motif)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMotif)).BeginInit();
             this.SuspendLayout();
             // 
             // cbRapport
@@ -81,7 +88,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.RAPPORT_VISITETableAdapter = this.rAPPORT_VISITETableAdapter;
-            this.tableAdapterManager.UpdateOrder = Swiss_visite.GSB_CompteRendusTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Swiss_visite.Datasets.GSB_CompteRendusTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // lblRapport
             // 
@@ -109,15 +116,6 @@
             this.lblCollab.Size = new System.Drawing.Size(132, 13);
             this.lblCollab.TabIndex = 4;
             this.lblCollab.Text = "Matricule du collaborateur:";
-            // 
-            // lblMotifBD
-            // 
-            this.lblMotifBD.AutoSize = true;
-            this.lblMotifBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsRapport, "MOT_NUM", true));
-            this.lblMotifBD.Location = new System.Drawing.Point(175, 112);
-            this.lblMotifBD.Name = "lblMotifBD";
-            this.lblMotifBD.Size = new System.Drawing.Size(0, 13);
-            this.lblMotifBD.TabIndex = 7;
             // 
             // lblMotif
             // 
@@ -200,11 +198,53 @@
             this.lblCoeffConfiance.TabIndex = 14;
             this.lblCoeffConfiance.Text = "Coefficient de confiance:";
             // 
+            // cbMotif
+            // 
+            this.cbMotif.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsRapport, "MOT_NUM", true));
+            this.cbMotif.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMotif.FormattingEnabled = true;
+            this.cbMotif.Location = new System.Drawing.Point(178, 109);
+            this.cbMotif.Name = "cbMotif";
+            this.cbMotif.Size = new System.Drawing.Size(121, 21);
+            this.cbMotif.TabIndex = 16;
+            // 
+            // gSB_Motif
+            // 
+            this.gSB_Motif.DataSetName = "GSB_Motif";
+            this.gSB_Motif.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bsMotif
+            // 
+            this.bsMotif.DataMember = "MOTIF";
+            this.bsMotif.DataSource = this.gSB_Motif;
+            // 
+            // mOTIFTableAdapter
+            // 
+            this.mOTIFTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = Swiss_visite.Datasets.GSB_MotifTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.Location = new System.Drawing.Point(245, 292);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(172, 23);
+            this.btnEnregistrer.TabIndex = 17;
+            this.btnEnregistrer.Text = "Enregistrer les modifications";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
+            // 
             // CompteRendus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 301);
+            this.ClientSize = new System.Drawing.Size(429, 327);
+            this.Controls.Add(this.btnEnregistrer);
+            this.Controls.Add(this.cbMotif);
             this.Controls.Add(this.lblCoeffConfianceBD);
             this.Controls.Add(this.lblCoeffConfiance);
             this.Controls.Add(this.lblDateSaisieBD);
@@ -213,7 +253,6 @@
             this.Controls.Add(this.lblBilan);
             this.Controls.Add(this.lblPraticienBD);
             this.Controls.Add(this.lblPraticien);
-            this.Controls.Add(this.lblMotifBD);
             this.Controls.Add(this.lblMotif);
             this.Controls.Add(this.lblCollabBD);
             this.Controls.Add(this.lblCollab);
@@ -224,6 +263,8 @@
             this.Text = "Compte Rendus";
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_CompteRendus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_Motif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMotif)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,13 +273,12 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbRapport;
-        private GSB_CompteRendus gSB_CompteRendus;
-        private GSB_CompteRendusTableAdapters.RAPPORT_VISITETableAdapter rAPPORT_VISITETableAdapter;
-        private GSB_CompteRendusTableAdapters.TableAdapterManager tableAdapterManager;
+        private Datasets.GSB_CompteRendus gSB_CompteRendus;
+        private Datasets.GSB_CompteRendusTableAdapters.RAPPORT_VISITETableAdapter rAPPORT_VISITETableAdapter;
+        private Datasets.GSB_CompteRendusTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label lblRapport;
         private System.Windows.Forms.Label lblCollabBD;
         private System.Windows.Forms.Label lblCollab;
-        private System.Windows.Forms.Label lblMotifBD;
         private System.Windows.Forms.Label lblMotif;
         private System.Windows.Forms.Label lblPraticienBD;
         private System.Windows.Forms.Label lblPraticien;
@@ -249,5 +289,11 @@
         private System.Windows.Forms.Label lblCoeffConfianceBD;
         private System.Windows.Forms.Label lblCoeffConfiance;
         private System.Windows.Forms.BindingSource bsRapport;
+        private System.Windows.Forms.ComboBox cbMotif;
+        private Datasets.GSB_Motif gSB_Motif;
+        private System.Windows.Forms.BindingSource bsMotif;
+        private Datasets.GSB_MotifTableAdapters.MOTIFTableAdapter mOTIFTableAdapter;
+        private Datasets.GSB_MotifTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.Button btnEnregistrer;
     }
 }
